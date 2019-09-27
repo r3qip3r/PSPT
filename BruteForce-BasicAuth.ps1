@@ -32,7 +32,7 @@ BruteForce-BasicAuth -UsernameList .\usernames.txt -PasswordList .\passwords.txt
 .NOTES
 This script was created for completing the requirements of the SecurityTube PowerShell for Penetration Testers Certification Exam:
 http://www.securitytube-training.com/online-courses/powershell-for-pentesters/
-Student ID: PSP-xxxx
+Student ID: PSP-6248
 
 #>
 

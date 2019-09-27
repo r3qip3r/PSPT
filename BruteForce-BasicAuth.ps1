@@ -29,7 +29,7 @@ Optional filename on the webserver. Could also be a directory (ex: admin/console
 .EXAMPLE
 BruteForce-BasicAuth -UsernameList .\usernames.txt -PasswordList .\passwords.txt -Hostname 127.0.0.1 -Filename Stuff.txt
 
-.LINKS
+.LINK
 https://github.com/ahhh/PSSE/blob/master/Brute-Basic-Auth.ps1
 
 .NOTES

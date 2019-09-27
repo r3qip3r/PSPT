@@ -29,6 +29,9 @@ Optional filename on the webserver. Could also be a directory (ex: admin/console
 .EXAMPLE
 BruteForce-BasicAuth -UsernameList .\usernames.txt -PasswordList .\passwords.txt -Hostname 127.0.0.1 -Filename Stuff.txt
 
+.LINKS
+https://github.com/ahhh/PSSE/blob/master/Brute-Basic-Auth.ps1
+
 .NOTES
 This script was created for completing the requirements of the SecurityTube PowerShell for Penetration Testers Certification Exam:
 http://www.securitytube-training.com/online-courses/powershell-for-pentesters/

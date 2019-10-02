@@ -26,7 +26,7 @@ https://sa1m0nz.wordpress.com/2018/01/26/enumerate-directories-inside-cwindowssy
 .NOTES
 This script has been created for completing the requirements of the SecurityTube PowerShell for Penetration Testers Certification Exam
 http://www.securitytube-training.com/online-courses/powershell-for-pentesters/
-Student ID: PSP-XXXX
+Student ID: PSP-6248
 #> 
 
 [CmdletBinding()] Param(

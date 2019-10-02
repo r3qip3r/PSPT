@@ -4,6 +4,11 @@
 .LINK
 https://github.com/ahhh/PSSE/blob/master/Scan-Share-Permissions.ps1
 
+ This blog post has been created for completing the requirements of the SecurityTube PowerShell for Penetration Testers Certification Exam: http://www.securitytube-training.com/online-courses/powershell-for-pentesters/
+
+Student ID: PSP-6248 
+
+
 #>
 
 

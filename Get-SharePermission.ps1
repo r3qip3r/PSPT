@@ -1,19 +1,58 @@
+function Get-SharePermission {
+
 
 <#
+.SYNOPSIS
+A PowerShell script that scans for insecure shares on a computer or domain network.
+
+.DESCRIPTION
+Use to find insecure network shares on the network.
+
+.PARAMTER Computername
+Use this parameter to scan a specic machine
+
+.PARAMTER Domain
+Use this parameter to find computers in the domain and scan them automatically
+
+.EXAMPLE
+
+Get-SharepePermission -Domain
+
+.EXAMPLE
+
+Get-SharePermission -Computername <computername>
 
 .LINK
 https://github.com/ahhh/PSSE/blob/master/Scan-Share-Permissions.ps1
 
- This blog post has been created for completing the requirements of the SecurityTube PowerShell for Penetration Testers Certification Exam: http://www.securitytube-training.com/online-courses/powershell-for-pentesters/
-
+.NOTES
+This blog post has been created for completing the requirements of the SecurityTube PowerShell for Penetration Testers Certification Exam: http://www.securitytube-training.com/online-courses/powershell-for-pentesters/
 Student ID: PSP-6248 
-
 
 #>
 
+param (
+
+    [Parameter(Mandatory = $false, ParameterSetName = "computer")]
+    [String]
+    $Computername,
+
+    [Parameter(Mandatory = $false, ParameterSetName = "Domain")]
+    [Switch]
+    $Domain
+
+    )
 
 # Get list of servers from Active Directory 
-$computernames = get-adcomputer -filter * |select  -ExpandProperty name;
+
+    if ($Domain) {
+        $computernames = get-adcomputer -filter * | select  -ExpandProperty name
+        }
+        
+    if ($Computername) {
+        $computernames = $Computername
+        }
+        
 $insecureshares = @()
 # Loop through each server found 
 foreach ($computer in $computernames) {
@@ -52,4 +91,7 @@ foreach ($share in $shares) {
     write-host "Insecure shares found:" -ForegroundColor Green
     write-host $insecureshares 
     }
+}
+
+
 }

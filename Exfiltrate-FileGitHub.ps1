@@ -1,4 +1,3 @@
-## Powershell For Penetration Testers Exam Task 8 - Use a popular third party website for exfiltration.
 function Exfiltrate-FileGitHub { 
 <#
 .SYNOPSIS

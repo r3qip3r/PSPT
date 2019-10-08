@@ -121,11 +121,21 @@ try
             $Result = Get-Content $querystring
             break
             }
-            # To upload - or rather create a new file on the 
+
+
+            # To upload - or rather create a new file on the server place the filename in the first querystring and contents in the next. Ex: /uploac?file=test.txt&content=contentstofile
             "GET /upload" { 
             $result = Set-Content -Path (Join-Path $WebRoot ($context.Request.QueryString[0])) -Value ($context.Request.QueryString[1]) 
             break
             }
+
+            
+            # To delete a file 
+            "GET /delete" { 
+            $result = Remove-Item -Path $querystring
+            break
+            }
+
                     
         }
 	}

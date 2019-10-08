@@ -55,22 +55,6 @@ Student ID: PSP-6248
               
        )
 
-#Create URL
-$url = 'http://' + $hostname + ':' + $port + '/'
-
-
-# HTML content for some URLs entered by the user
-$htmlcontents = @{
-  # Simple HTML returned for the base     
-      "/"  =  { return '<html><building> Yet another PowerShell webserver </building></html>' }
-      
-      # Testing the response from function call's, in this case services running on host
-      "/services"  =  { return Get-Service | ConvertTo-Html }
-      # Listing of the files in the WebRoot
-      "/list" = { return ls $WebRoot | ConvertTo-Html }
-      
-}
-
 # start web server
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add($url)
@@ -91,7 +75,7 @@ try
     # is there HTML content for this URL?
     $Received = '{0} {1}' -f $Request.httpMethod, $Request.Url.LocalPath
     #$HTMLResponse = $HTMLResponseContents[$Received]
-	$Result = ''
+    $Result = ''
 
 
     
@@ -130,7 +114,7 @@ try
             }
 
             
-            # To delete a file 
+            # To delete a file place the filename (using the full path) in the querystring like above
             "GET /delete" { 
             $result = Remove-Item -Path $querystring
             break
